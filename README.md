@@ -26,3 +26,12 @@ python -m venv venv
 
 Rodar python python main.py  para PT = ENG ou 
 Rodar python  python en_pt.py  para ENG = PT 
+
+
+# Como rodar teste_translate:
+
+instalar translate e so rodar mesmo a teste_transale e ver a traducao
+
+
+```
+pip install translate
