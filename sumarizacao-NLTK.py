@@ -4,6 +4,8 @@ from nltk.tokenize import sent_tokenize, word_tokenize
 from nltk.probability import FreqDist
 from nltk.tokenize.treebank import TreebankWordDetokenizer
 
+# NLTK
+
 # Baixe os recursos necessários (somente uma vez)
 nltk.download('punkt')
 nltk.download('stopwords') #remove as palavras que sao inrelevantes
@@ -33,7 +35,7 @@ def sumarizacao_text(text, num_sentences=2):
                 break
 
     # Detokenize as frases para criar o resumo final
-    sumario_texto = TreebankWordDetokenizer().detokenize( sumario_sentences)
+    sumario_texto = TreebankWordDetokenizer().detokenize(sumario_sentences)
 
     return sumario_texto
 
