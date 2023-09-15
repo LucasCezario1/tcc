@@ -1,6 +1,8 @@
 import tensorflow as tf
 from transformers import BertTokenizer, TFBertForTokenClassification
 
+#Faz analise do texto e imprime o tonkens que cada palavra
+
 # Carregue o tokenizador e o modelo BERT pré-treinado
 tokenizer = BertTokenizer.from_pretrained("bert-base-multilingual-cased")
 model = TFBertForTokenClassification.from_pretrained("bert-base-multilingual-cased")

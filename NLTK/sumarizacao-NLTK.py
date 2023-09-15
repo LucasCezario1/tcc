@@ -4,7 +4,7 @@ from nltk.tokenize import sent_tokenize, word_tokenize
 from nltk.probability import FreqDist
 from nltk.tokenize.treebank import TreebankWordDetokenizer
 
-# NLTK
+# NLTK - Faz um resumo do texto
 
 # Baixe os recursos necessários (somente uma vez)
 nltk.download('punkt')

@@ -1,6 +1,9 @@
 import torch
 from transformers import BertTokenizer, BertForMaskedLM
 
+#torch- Faz previsao de como sera a frase com o MASK
+
+
 # Carregue o tokenizador e o modelo BERT pré-treinado em Português
 tokenizer = BertTokenizer.from_pretrained("neuralmind/bert-base-portuguese-cased")
 model = BertForMaskedLM.from_pretrained("neuralmind/bert-base-portuguese-cased")

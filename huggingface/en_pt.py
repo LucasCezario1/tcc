@@ -1,6 +1,6 @@
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, pipeline
 
-
+#faz traducao do texto de  portugues para o ingles
 def main():
     #  huggingface
     tokenizer = AutoTokenizer.from_pretrained("unicamp-dl/translation-pt-en-t5")

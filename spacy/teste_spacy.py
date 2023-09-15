@@ -1,6 +1,6 @@
 import spacy
 
-#spacy
+#spacy - Faz analise do texto e analisa as palavras e da um significado para elas
 nlp = spacy.load('pt_core_news_sm')
 
 texto = "Quatro romeiros morreram atropelados na rodovia Presidente Dutra enquanto seguiam para Aparecida (SP) entre a noite de ontem e madrugada de hoje. O dia 12, de Nossa Senhora Aparecida, padroeira do Brasil, é celebrado na próxima terça-feira"
