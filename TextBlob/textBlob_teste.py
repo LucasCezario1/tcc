@@ -2,7 +2,8 @@ from textblob import TextBlob
 
 #Analise de sentimento
 
-texto = "I hate you "
+# algumas abigudades ele nao entede como shame ele coloca como neutro
+texto = "I am love you"
 blob = TextBlob(texto) # biblioteca que faz a analise da frase
 
 

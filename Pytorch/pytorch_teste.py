@@ -9,7 +9,7 @@ tokenizer = BertTokenizer.from_pretrained("neuralmind/bert-base-portuguese-cased
 model = BertForMaskedLM.from_pretrained("neuralmind/bert-base-portuguese-cased")
 
 # Frase com a lacuna
-frase = "Tinha uma [MASK] no meio do caminho."
+frase = "Eu nadei hoje na [MASK]."
 
 # Tokenize a frase
 tokens = tokenizer.tokenize(frase)
@@ -35,4 +35,6 @@ token_previsto = tokenizer.convert_ids_to_tokens(token_previsto_id)
 frase_preenchida = frase.replace('[MASK]', token_previsto)
 
 # Imprima a frase preenchida
+print("Frase que foi digitada: ", frase)
+
 print("Frase preenchida:", frase_preenchida)
