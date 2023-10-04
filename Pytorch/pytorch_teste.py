@@ -1,8 +1,7 @@
 import torch
 from transformers import BertTokenizer, BertForMaskedLM
-
-#torch- Faz previsao de como sera a frase com o MASK
-
+import time
+import psutil
 
 # Carregue o tokenizador e o modelo BERT pré-treinado em Português
 tokenizer = BertTokenizer.from_pretrained("neuralmind/bert-base-portuguese-cased")
@@ -10,6 +9,9 @@ model = BertForMaskedLM.from_pretrained("neuralmind/bert-base-portuguese-cased")
 
 # Frase com a lacuna
 frase = "Eu nadei hoje na [MASK]."
+
+# Iniciar a contagem do tempo de execução
+start_time = time.time()
 
 # Tokenize a frase
 tokens = tokenizer.tokenize(frase)
@@ -28,13 +30,25 @@ with torch.no_grad():
 # Obtenha o ID do token previsto
 token_previsto_id = torch.argmax(logits[0, posicao_mask]).item()
 
-# Converta o ID do token previsto de volta para texto basicamente converte para string
+# Converta o ID do token previsto de volta para texto
 token_previsto = tokenizer.convert_ids_to_tokens(token_previsto_id)
 
 # Substitua [MASK] pelo token previsto na frase
 frase_preenchida = frase.replace('[MASK]', token_previsto)
 
-# Imprima a frase preenchida
-print("Frase que foi digitada: ", frase)
+# Parar a contagem do tempo de execução
+end_time = time.time()
 
+# Calcular o tempo de execução
+execution_time = end_time - start_time
+
+# Medir o uso de memória
+memory_usage = psutil.Process().memory_info().rss / (1024 ** 2)  # em MB
+
+# Imprima a frase preenchida
+print("Frase que foi digitada:", frase)
 print("Frase preenchida:", frase_preenchida)
+
+# Imprimir métricas de tempo de execução e uso de memória
+print(f"Tempo de Execução: {execution_time:.4f} segundos")
+print(f"Uso de Memória: {memory_usage:.2f} MB")
